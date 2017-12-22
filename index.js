@@ -1,15 +1,8 @@
 module.exports = {
   extends: [
-    'eslint-config-airbnb-base/rules/best-practices',
-    'eslint-config-airbnb-base/rules/errors',
-    'eslint-config-airbnb-base/rules/node',
-    'eslint-config-airbnb-base/rules/style',
-    'eslint-config-airbnb-base/rules/variables',
-    'eslint-config-airbnb-base/rules/es6',
-    'eslint-config-airbnb-base/rules/strict',
+    './base',
     'eslint-config-airbnb/rules/react',
     'eslint-config-airbnb/rules/react-a11y',
-    './base',
   ].map(require.resolve),
   parser: 'babel-eslint',
   env: {
@@ -29,7 +22,9 @@ module.exports = {
   rules: {
     'jsx-a11y/aria-props': 2,
     'jsx-a11y/heading-has-content': 0,
-    'jsx-a11y/label-has-for': 2,
+    'jsx-a11y/label-has-for': [2, {
+      allowChildren: true,
+    }],
     'jsx-a11y/mouse-events-have-key-events': 2,
     'jsx-a11y/role-has-required-aria-props': 2,
     'jsx-a11y/role-supports-aria-props': 2,
@@ -54,7 +49,7 @@ module.exports = {
     {
       files: ['Containers/**/*.js'],
 
-      // Override config (only applied to files that match the given globs)
+      // Containers can always be Class Components
       rules: {
         'react/prefer-stateless-function': 0,
       },
