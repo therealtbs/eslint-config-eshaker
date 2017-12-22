@@ -47,7 +47,7 @@ module.exports = {
   },
   overrides: [
     {
-      files: ['Containers/**/*.js'],
+      files: ['**/Containers/**/*.js'],
 
       // Containers can always be Class Components
       rules: {
