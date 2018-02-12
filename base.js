@@ -19,6 +19,10 @@ module.exports = {
     ecmaVersion: 8,
     sourceType: 'module',
   },
+  globals: {
+    _AURORA_CONTEXT_: false,
+    _AURORA_FEATURE_: false,
+  },
   rules: {
     'arrow-parens': ['error', 'always'],
     'arrow-body-style': ['error', 'as-needed'],
