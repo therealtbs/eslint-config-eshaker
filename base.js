@@ -26,7 +26,7 @@ module.exports = {
     'no-underscore-dangle': [
       'error',
       {
-        allow: ['_context_', '_model_'],
+        allow: ['_context_', '_model_', '_AURORA_CONTEXT_', '_AURORA_FEATURE_'],
         allowAfterThis: true,
       },
     ],
